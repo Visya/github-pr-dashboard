@@ -1,10 +1,14 @@
-import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
 
-  entry: './index.jsx',
+  entry: [
+    'babel-polyfill',
+    './index.jsx',
+  ],
 
   output: {
     path: path.join(__dirname, 'dist'),
@@ -12,6 +16,7 @@ module.exports = {
   },
 
   resolve: {
+    root: path.resolve(__dirname, 'src'),
     extensions: ['', '.js', '.jsx', '.json'],
   },
 
@@ -27,6 +32,14 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'html',
       },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loader: ExtractTextPlugin.extract(
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss',
+        ),
+      },
     ],
   },
 
@@ -36,5 +49,6 @@ module.exports = {
       inject: true,
       template: 'index.html',
     }),
+    new ExtractTextPlugin('[name].css'),
   ],
 };
