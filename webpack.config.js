@@ -1,5 +1,5 @@
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -8,11 +8,11 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   resolve: {
-    extensions: [ '', '.js', '.jsx', '.json' ]
+    extensions: ['', '.js', '.jsx', '.json'],
   },
 
   module: {
@@ -20,21 +20,21 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: [ 'react-hot', 'babel-loader' ]
+        loaders: ['react-hot', 'babel-loader'],
       },
       {
         test: /\.html$/,
         exclude: /node_modules/,
-        loader: 'html'
-      }
-    ]
+        loader: 'html',
+      },
+    ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
       inject: true,
-      template: 'index.html'
-    })
-  ]
-}
+      template: 'index.html',
+    }),
+  ],
+};
