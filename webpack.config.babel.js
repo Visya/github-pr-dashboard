@@ -33,11 +33,10 @@ module.exports = {
         loader: 'html',
       },
       {
-        test: /\.css$/,
-        exclude: /node_modules/,
+        test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
           'style',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass',
         ),
       },
     ],
@@ -49,6 +48,6 @@ module.exports = {
       inject: true,
       template: 'index.html',
     }),
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('styles.css'),
   ],
 };
