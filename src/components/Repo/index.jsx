@@ -6,7 +6,8 @@ import Paper from 'material-ui/Paper';
 import Subheader from 'material-ui/Subheader';
 
 import Stats from 'components/Stats';
-import Chart from 'components/Chart';
+import OpenClosedChart from 'components/OpenClosedChart';
+import UsersChart from 'components/UsersChart';
 
 import styles from './styles.scss';
 
@@ -21,11 +22,11 @@ const widgets = [
     featured: true,
   },
   {
-    Component: Chart,
+    Component: OpenClosedChart,
     title: 'Open/Closed',
   },
   {
-    Component: Chart,
+    Component: UsersChart,
     title: 'Statistics by user',
   },
 ];

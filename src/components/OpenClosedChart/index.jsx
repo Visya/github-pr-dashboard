@@ -5,9 +5,9 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import styles from './styles.scss';
 
 const mockData = fromJS([
-  { week: 1, open: 3, closed: 0 },
-  { week: 2, open: 4, closed: 2 },
-  { week: 3, open: 2, closed: 6 },
+  { week: 'week 1', open: 3, closed: 0 },
+  { week: 'week 2', open: 4, closed: 2 },
+  { week: 'week 3', open: 2, closed: 6 },
 ]);
 
 const Chart = ({
