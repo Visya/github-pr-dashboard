@@ -13,17 +13,17 @@ const mockData = fromJS([
 const Chart = ({
   data = mockData,
   height = 300,
-  width = 600,
+  width = 400,
   openColor = '#FF3D00',
   closedColor = '#76FF03',
 }) => (
-  <BarChart width={ width } height={ height } className={ styles.chart } data={ data }>
-    <XAxis datakey='week' />
+  <BarChart width={ width } height={ height } className={ styles.chart } data={ data.toJS() }>
+    <XAxis dataKey='week' />
     <YAxis />
     <Tooltip />
     <Legend />
-    <Bar datakey='open' fill={ openColor } />
-    <Bar datakey='closed' fill={ closedColor } />
+    <Bar dataKey='open' fill={ openColor } />
+    <Bar dataKey='closed' fill={ closedColor } />
   </BarChart>
 );
 
