@@ -13,10 +13,10 @@ const Stat = ({
     className={ classnames(className, styles.stat) }
     { ...props }
   >
-    <h6 className='mdl-typography--title'>
+    <p className='mdl-typography--title'>
       <span className={ styles.value }>{ value }</span>
       { label }
-    </h6>
+    </p>
   </div>
 );
 
