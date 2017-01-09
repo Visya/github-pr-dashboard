@@ -24,7 +24,7 @@ const Overview = ({
   main = fromJS({ label: 'open', value: 15 }),
   repoStats = mockRepoStats,
 }) => (
-  <GridList cellHeight={ 180 }>
+  <GridList cellHeight={ 180 } style={ { width: 400 } }>
     <GridTile>
       <div className={ styles.main }>
         <p className='mdl-typography--display-4'>{ main.get('value', 0) }</p>
