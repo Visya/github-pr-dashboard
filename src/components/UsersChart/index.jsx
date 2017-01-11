@@ -9,7 +9,7 @@ const mockData = fromJS([
   { name: 'active', value: 7 },
 ]);
 
-const Chart = ({
+const UsersChart = ({
   color = '#76FF03',
   data = mockData,
   height = 300,
@@ -25,11 +25,11 @@ const Chart = ({
   </PieChart>
 );
 
-Chart.propTypes = {
+UsersChart.propTypes = {
   color: PropTypes.string,
   data: PropTypes.instanceOf(List),
   height: PropTypes.number,
   width: PropTypes.number,
 };
 
-export default Chart;
+export default UsersChart;

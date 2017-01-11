@@ -20,7 +20,7 @@ const renderStats = stats => stats.map(stat => (<Stat
   key={ stat.get('label') }
 />));
 
-const Overview = ({
+const Stats = ({
   main = fromJS({ label: 'open', value: 15 }),
   repoStats = mockRepoStats,
 }) => (
@@ -39,9 +39,9 @@ const Overview = ({
   </GridList>
 );
 
-Overview.propTypes = {
+Stats.propTypes = {
   main: PropTypes.instanceOf(Map),
   repoStats: PropTypes.instanceOf(Map),
 };
 
-export default Overview;
+export default Stats;

@@ -10,7 +10,7 @@ const mockData = fromJS([
   { week: 'week 3', open: 2, closed: 6 },
 ]);
 
-const Chart = ({
+const OpenClosedChart = ({
   data = mockData,
   height = 300,
   width = 400,
@@ -27,7 +27,7 @@ const Chart = ({
   </BarChart>
 );
 
-Chart.propTypes = {
+OpenClosedChart.propTypes = {
   data: PropTypes.instanceOf(List),
   height: PropTypes.number,
   width: PropTypes.number,
@@ -35,4 +35,4 @@ Chart.propTypes = {
   openColor: PropTypes.string,
 };
 
-export default Chart;
+export default OpenClosedChart;

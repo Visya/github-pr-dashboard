@@ -31,7 +31,7 @@ const widgets = [
   },
 ];
 
-const Repository = ({
+const Repo = ({
   name = 'My Repo',
   id = '0',
 }) => (
@@ -52,9 +52,9 @@ const Repository = ({
   </div>
 );
 
-Repository.propTypes = {
+Repo.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
 };
 
-export default Repository;
+export default Repo;
