@@ -1,0 +1,2 @@
+export const SEARCH_REPO = 'SEARCH_REPO';
+export const SEARCH_REPO_SUCCESS = 'SEARCH_REPO_SUCCESS';
