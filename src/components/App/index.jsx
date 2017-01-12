@@ -1,12 +1,10 @@
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import AppBar from 'material-ui/AppBar';
-// import Repo from 'components/Repo';
-import RepoList from 'containers/RepoList';
 import Search from 'containers/Search';
 
-export default () => (
+const App = ({ children }) => (
   <MuiThemeProvider>
     <div>
       <AppBar
@@ -14,7 +12,12 @@ export default () => (
         showMenuIconButton={ false }
         iconElementRight={ <Search /> }
       />
-      <RepoList />
+      { children }
     </div>
   </MuiThemeProvider>
 );
+App.propTypes = {
+  children: PropTypes.node,
+};
+
+export default App;

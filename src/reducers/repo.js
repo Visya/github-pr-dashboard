@@ -9,11 +9,17 @@ const initialState = fromJS({
   totalCount: 0,
 });
 
+const normalizeRepo = (id, { full_name, url }) => ({
+  id: String(id),
+  name: full_name,
+  url,
+});
+
 export default handleActions({
   [SEARCH_REPO_SUCCESS]: (state, { payload: { items, total_count } }) => {
-    const normalizedItems = items.reduce(({ allIds, byId }, { id, name, url }) => ({
+    const normalizedItems = items.reduce(({ allIds, byId }, { id, ...rest }) => ({
       allIds: [...allIds, String(id)],
-      byId: { ...byId, [id]: { name, url } },
+      byId: { ...byId, [id]: normalizeRepo(id, rest) },
     }), {
       allIds: [],
       byId: {},
