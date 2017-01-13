@@ -9,10 +9,11 @@ const initialState = fromJS({
   totalCount: 0,
 });
 
-const normalizeRepo = (id, { full_name, url }) => ({
+const normalizeRepo = (id, { full_name, url, pulls_url }) => ({
   id: String(id),
   name: full_name,
   url,
+  prsUrl: pulls_url.split('{')[0],
 });
 
 export default handleActions({

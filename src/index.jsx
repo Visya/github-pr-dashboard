@@ -8,7 +8,7 @@ import 'rxjs';
 
 import App from 'components/App';
 import RepoList from 'containers/RepoList';
-import RepoOverview from 'components/RepoOverview';
+import RepoOverview from 'containers/RepoOverview';
 
 import createStore from 'store';
 
@@ -26,7 +26,7 @@ ReactDOM.render(
     <Router history={ history }>
       <Route path='/' component={ App }>
         <IndexRoute component={ RepoList } />
-        <Route path='repo/:name' component={ RepoOverview } />
+        <Route path='repo/:id' component={ RepoOverview } />
       </Route>
     </Router>
   </Provider>,
