@@ -8,7 +8,8 @@ export default function search(action$) {
   return action$
     .ofType(SEARCH_REPO)
     .debounceTime(300)
-    .map(action => action.payload.text)
+    .pluck('payload', 'text')
+    .distinctUntilChanged()
     .filter(q => !!q)
     .mergeMap(query => ajax
       .getJSON(

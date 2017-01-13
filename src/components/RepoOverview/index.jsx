@@ -5,7 +5,7 @@ import GridTile from 'material-ui/GridList/GridTile';
 import Paper from 'material-ui/Paper';
 import Subheader from 'material-ui/Subheader';
 
-import Stats from 'components/Stats';
+import Stats from 'containers/Stats';
 import OpenClosedChart from 'components/OpenClosedChart';
 import UsersChart from 'components/UsersChart';
 
