@@ -1,5 +1,6 @@
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { DefinePlugin } from 'webpack';
 import path from 'path';
 
 module.exports = {
@@ -54,5 +55,8 @@ module.exports = {
       template: 'index.html',
     }),
     new ExtractTextPlugin('styles.css'),
+    new DefinePlugin({
+      'process.env.TOKEN': JSON.stringify(process.env.GITHUB_TOKEN) || 'secretToken',
+    }),
   ],
 };

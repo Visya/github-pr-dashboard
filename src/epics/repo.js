@@ -11,6 +11,9 @@ export default function search(action$) {
     .map(action => action.payload.text)
     .filter(q => !!q)
     .mergeMap(query => ajax
-      .getJSON(`https://api.github.com/search/repositories?q=${query}&sort=stars`))
+      .getJSON(
+        `https://api.github.com/search/repositories?q=${query}&sort=stars`,
+        { Authorization: `token ${process.env.TOKEN}` },
+      ))
     .map(searchSuccess);
 }

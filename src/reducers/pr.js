@@ -21,5 +21,5 @@ const normalizePr = pr => ({
 export default handleActions({
   [GET_PR_SUCCESS]: (state, { payload: { pr } }) => state.mergeDeep({
     byId: { [pr.id]: normalizePr(pr) },
-  }).update('allIds', allIds => allIds.push(pr.id)),
+  }).update('allIds', allIds => allIds.push(String(pr.id))),
 }, initialState);
