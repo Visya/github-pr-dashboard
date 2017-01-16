@@ -6,7 +6,7 @@ import Paper from 'material-ui/Paper';
 import Subheader from 'material-ui/Subheader';
 
 import Stats from 'containers/Stats';
-import OpenClosedChart from 'components/OpenClosedChart';
+import OpenClosedChart from 'containers/OpenClosedChart';
 import UsersChart from 'components/UsersChart';
 
 import styles from './styles.scss';

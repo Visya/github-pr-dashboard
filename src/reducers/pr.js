@@ -1,10 +1,13 @@
 import { handleActions } from 'redux-actions';
-import { fromJS } from 'immutable';
+import { fromJS, OrderedMap } from 'immutable';
 
 import { GET_PR_SUCCESS } from 'constants';
 
 const initialState = fromJS({
-  byId: {},
+  // TODO: Ordered map allows to work with reviews in much easier way
+  // unfortunately we cannot guarantee that the order of the prs will
+  // always be correct, so need to revise this
+  byId: OrderedMap(),
   allIds: [],
 });
 
@@ -20,6 +23,6 @@ const normalizePr = pr => ({
 
 export default handleActions({
   [GET_PR_SUCCESS]: (state, { payload: { pr } }) => state.mergeDeep({
-    byId: { [pr.id]: normalizePr(pr) },
-  }).update('allIds', allIds => allIds.push(String(pr.id))),
+    byId: { [pr.number]: normalizePr(pr) },
+  }).update('allIds', allIds => allIds.push(String(pr.number))),
 }, initialState);

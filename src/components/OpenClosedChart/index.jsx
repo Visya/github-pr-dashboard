@@ -17,8 +17,8 @@ const OpenClosedChart = ({
   openColor = '#FF3D00',
   closedColor = '#76FF03',
 }) => (
-  <BarChart width={ width } height={ height } className={ styles.chart } data={ data.toJS() }>
-    <XAxis dataKey='week' />
+  <BarChart width={ width } height={ height } className={ styles.chart } data={ data }>
+    <XAxis dataKey='name' />
     <YAxis />
     <Tooltip />
     <Legend />
