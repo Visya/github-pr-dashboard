@@ -1,17 +1,10 @@
-import { List, fromJS } from 'immutable';
 import React, { PropTypes } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 import styles from './styles.scss';
 
-const mockData = fromJS([
-  { week: 'week 1', open: 3, closed: 0 },
-  { week: 'week 2', open: 4, closed: 2 },
-  { week: 'week 3', open: 2, closed: 6 },
-]);
-
 const OpenClosedChart = ({
-  data = mockData,
+  data,
   height = 300,
   width = 400,
   openColor = '#FF3D00',
@@ -28,7 +21,11 @@ const OpenClosedChart = ({
 );
 
 OpenClosedChart.propTypes = {
-  data: PropTypes.instanceOf(List),
+  data: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    open: PropTypes.number,
+    closed: PropTypes.number,
+  })),
   height: PropTypes.number,
   width: PropTypes.number,
   closedColor: PropTypes.string,

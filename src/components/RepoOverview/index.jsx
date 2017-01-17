@@ -12,10 +12,6 @@ import UsersChart from 'components/UsersChart';
 import styles from './styles.scss';
 
 const widgets = [
-  // {
-  //   Component: Overview,
-  //   title: 'Overview',
-  // },
   {
     Component: Stats,
     title: 'Stats',
